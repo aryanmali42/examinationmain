@@ -10,9 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/587a7128aa.js" crossorigin="anonymous"></script>
-  <script src="
-https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
-"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -20,7 +18,7 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
     * {
 
@@ -28,7 +26,7 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
     }
 
     .multiselect {
-      width: 200px;
+      width: 300px;
     }
 
     .selectBox {
@@ -65,6 +63,8 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
     body {
       background: linear-gradient(to right, #064d99, #439eff);;
       min-height: 100vh;
+      padding-top:20px;
+      
     }
 
     .wrapper {
@@ -130,29 +130,53 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
     			background-color: white;
     			border-radius: 10px;"
 				margin-top: 120px;
+        font-size:18px;
+        font-weight:200;
 	
     }
+
+    .frmm select:hover,.frmm input[type="date"]:hover,.frmm input[type="name"]:hover
+{
+    color: #064d99;
+    background: transparent;
+    box-shadow: none;
+    box-shadow:
+        -1px -1px 5px 0px #fff,
+        7px 7px 20px 0px #0003,
+        4px 4px 5px 0px #0002;
+}
+
+
+.frmm  .option {
+    position: relative;
     
+    cursor: pointer;
+}
+
+.submit .btn {
+background: linear-gradient(to right, #064d99, #62aeff);
+color: #ffffff;
+text-transform: capitalize;
+font-size:25px;
+font-weight: 500;
+border-radius: .5rem;
+cursor: pointer;
+box-shadow: 0 .2rem 1rem rgba(0, 0, 0, 0.4);
+display:flex;
+justify-content:center;
+}
   </style>
 </head>
 
 <body>
 
-<div style="max-width:800px;padding-top:20px;border-radius:10px;background-color:white; margin-top: 10px; padding-top: 10px;padding-bottom: 10px;" class="container">
+<div style="max-width:800px;border-radius:10px;background-color:white; margin-top: 10px; padding-top: 10px;padding-bottom: px;" class="container">
 
-                <h3 style="font-size:30px;color:#064d99;font-weight:bold;" class="text-center">Add New Professor</h3>
-</div>         
+                <h3 style="font-size:30px;color:#064d99;font-weight:550;" class="text-center">Add New Professor</h3>
 
-
-<div class="frmm ">
-
-
-  <form method="post" action="add_professor.php">
-    
-
-      <!-- ACADEMIC YEAR BLOCK -->
+                <!-- ACADEMIC YEAR BLOCK -->
      
-        <h3 style="display:flex;justify-content:center;padding:20px;">
+        <h3 style="display:flex;justify-content:center;font-weight:300;">
           <label class="" for="drop1">Academic Year:-
             <?php
             if (date("m") > 5) {
@@ -162,6 +186,17 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
               <?php echo (date("Y") - 1) . '-' . date("y");     ?>
             <?php } ?></label>
         </h3>
+
+</div>         
+
+
+<div class="frmm ">
+
+
+  <form method="post" action="add_professor.php">
+    
+
+      
     
     
 <div style="padding:10px;" class="row">
@@ -224,19 +259,18 @@ ORDER BY name ASC
         <!-- DESIGNATION BLOCK -->
 
         <div class="col">
-          <div style="padding-left:30px;">
+          <div style="padding-left:15px;padding-top:5px;">
           
           <label>Designation:-</lable>
-            <div style="" class="dropdown row">
-              
-                <select name="designation" id="dsgn">
+            <div style="width:300px;" class="dropdown row">
+            <select class="form-control" id="dsgn">
                   <option selected disabled>Select Designation</option>
                   <option>Dean</option>
                   <option>HOD</option>
                   <option>Professor</option>
                   <option>Associate Professor</option>
                   <option>Assitant Professor</option>
-                </select>
+                  </select>
               <br>
               
             </div>
@@ -246,17 +280,17 @@ ORDER BY name ASC
 </div>
 
       <!-- type -->
-<div style="padding:10px;" class="row">
+<div style="padding:px;" class="row">
     <div class="col">
           <label>Type:-</label>
         <div class="d-flex align-items-center mt-2">
             <label class="option">
               <input type="radio" name="type" id="regular" value="R">Regular
-              <span class="checkmark"></span>
+              <span class="checkmark" for="regular"></span>
             </label>
             <label class="option ms-4">
               <input type="radio" name="type" id="visiting" value="V">Visiting
-              <span class="checkmark"></span>
+              <span class="checkmark" for="visiting"></span>
             </label>
         </div>
     </div>
@@ -265,19 +299,19 @@ ORDER BY name ASC
           <label>Exam Commitee Member:-</label>
         <div class="d-flex align-items-center mt-2">
             <label class="option">
-              <input type="radio" name="ecm" id="" value="yes">Yes
-              <span class="checkmark"></span>
+              <input type="radio" name="ecm" id="yes" value="yes">Yes
+              <span class="checkmark" for="yes"></span>
             </label>
             <label class="option ms-4">
-              <input type="radio" name="ecm" id="" value="no">No
-              <span class="checkmark"></span>
+              <input type="radio" name="ecm" id="no" value="no">No
+              <span class="checkmark" for="no"></span>
             </label>
         </div>
     </div>
 </div>
       <hr>
       
-        <div class="">
+        <div class="radio3">
           <div class="d-flex justify-content-center mt-2">
             <label class="option">
 
@@ -295,9 +329,13 @@ ORDER BY name ASC
           </div>
         </div>
                 <!-- Submit Button -->
-                <div style="justify-content:center;display:flex;padding:10px;" class="d-grid gap-2">
-        <button type="submit" class="btn btn-outline-primary  mt-3">Submit</button>
-</div>
+                <div style="" class="d-grid gap-2 submit">
+          
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+          
+              </div>
+
+  
  
   </form>
   </div>
