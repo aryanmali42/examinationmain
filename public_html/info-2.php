@@ -7,35 +7,12 @@
     <title>manageprofessor info</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-       
+        <link rel="stylesheet" href="css/buttons.css" type="text/css">
       <pages enableSessionState="true" /> 
- 
 </head>
 <!--  -->
 <body>
-    <style>
-        body {
-            background-color: white;
-        }
 
-        .login {
-            padding: 15px;
-            text-align: center;
-            text-transform: uppercase;
-            margin-top: 150px;
-        }
-
-        .login .btn {
-            border-radius: 50px;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 2px;
-            font-size: 20px;
-            white-space: normal;
-            padding: 26px;
-            background-color: #088af5;
-        }
-    </style>
     <!-- BACKGROUND IMG -->
     <!-- <div class="bg-image" 
 style="   background-image: url('https://mdbootstrap.com/img/new/fluid/nature/011.jpg');
@@ -48,25 +25,33 @@ style="   background-image: url('https://mdbootstrap.com/img/new/fluid/nature/01
                                 if($ecm=='A')
                                 {
                                     ?>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-9">
-                <div class="login">
-                    <form>
-                        <br>
-                        <div><a href="table/index2.php" class="  text-white btn btn-lg btn-block btn-danger">Feed Time Table</button></a><br>
-                        <a href="professor/manageprof.html" class=" btn btn-lg btn-block btn-danger ">Manage Professor Duty</button></a><br>
-                      
-                        <a href="" class="btn btn-lg btn-block btn-danger ">Allocate duty</button></a><br>
-                        <a href="" class="btn btn-lg btn-block btn-danger">Display supervision chart</button></a><br>
-                    </div>
-     
-                                    <div>
-                                    <a href="user/manageuser.html" class="  btn btn-lg btn-block btn-danger ">Manage User
-                                        Info</button></a>
-                                </div>
-                    </form>
-
+    <div class="content container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="frame">
+                <form>
+                            <div>
+                                <!-- Feed TimeTable -->
+                                <a href="table/index2.php" <button class="custom-btn btn-5 btn btn-lg btn-block"><span>Feed
+                                        Time
+                                        Table</span></button></a><br><br>
+                                <!-- Manage Professor Duty -->
+                                <a href="professor/manageprof.html" <button
+                                    class="custom-btn btn-5 btn btn-lg btn-block "><span>Manage Professor
+                                        Duty</span></button></a><br><br>
+                                <!-- Allocate Duty -->
+                                <a href="" <button class="custom-btn btn-5 btn btn-lg btn-block"><span>Allocate
+                                        duty</span></button></a><br><br>
+                                <!-- Display SuperVision Chart -->
+                                <a href="" <button class="custom-btn btn-5 btn btn-lg btn-block"><span>Display supervision
+                                        chart</span></button></a><br><br>
+                            </div>
+                            <!-- Manage User Info -->
+                            <div><a href="user/manageuser.html" <button
+                                    class="custom-btn btn-5 btn btn-lg btn-block"><span>Manage User
+                                        Info</span></button></a><br>
+                            </div>
+                        </form>
                 </div>
             </div>
         </div>

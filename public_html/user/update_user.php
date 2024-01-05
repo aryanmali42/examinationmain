@@ -14,72 +14,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+    <link href="../css/updateuser.css" rel="stylesheet" type="text/css">
 
 </head>
-<style>
-  body {
-    background-color: #eee;
-    font-family: 'Nunito', sans-serif;
-  }
-  .login {
-   
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 30px;
-    margin: 10px auto;
-    max-width: 690px;
-    padding: 30px 45px;
-    box-shadow: 5px 25px 35px #3535356b;
-    background-color: white;
-    border-radius: 40px;
-  }
-  .login h1 {
-    margin-top: px;
-    font-weight: bold;
-    font-size: 35px;
-    letter-spacing: 3px;
-  }
-  .login form {
-    max-width: 320px;
-    margin: 30px auto;
-  }
-  .login .btn {
-    border-radius: 50px;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 20px;
-    padding: 10px;
-    background-color: #00B72E;
-  }
-  .form-group input {
-    font-size: 20px;
-    font-weight: lighter;
-    border: none;
-    background-color: #F0F0F0;
-    color: #465347;
-    padding: 26px 30px;
-    border-radius: 50px;
-  }
-  .mainsize {
-    /* box-shadow: 5px 10px #888888;     ! boxshadow !*/
-    margin: 10px auto;
-    /* background: ; */
-    max-width: 590px;
-    padding: 30px 45px;
-    box-shadow: 5px 25px 35px #3535356b;
-    background-color: white;
-    border-radius: 10px;
-  }
-  
-input[type="radio"] {
-    background: #fff;
-    transition: 300ms ease-in-out 0s;
-    cursor: pointer;
-}
-
-
-</style>
+<body>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-8">
@@ -89,7 +27,7 @@ input[type="radio"] {
           <div class="form-group">
             <input type="text" class="form-control " id="user" name="username" placeholder="Username">
           </div>
-          <button type="submit" class="btn btn-lg btn-block btn-success ">UPDATE</button>
+          <button type="submit" class="btn btn-lg btn-block  ">UPDATE</button>
       </div>
     </div>
   </div>
@@ -134,7 +72,7 @@ if (isset($_POST['admin'])) {
       ?>
       <form action="index.html" method="post">
 <hr>
-        <h1 class="row justify-content-center">User Details</h1>
+        <h1 style="color:white;font-weight: 500;" class="row justify-content-center">User Details</h1>
 
 
       </form>
@@ -228,7 +166,8 @@ if (isset($_POST['admin'])) {
           ?>
           <hr class="mx-n3">
 
-          <button type="submit" class="btn btn-lg btn-block btn-primary ">Submit</button>
+          <button style="    background: linear-gradient(to right, #aeaeae, #aaaaaa);
+" type="submit" class="btn btn-lg btn-block ">Submit</button>
 
         </form>
         <?php

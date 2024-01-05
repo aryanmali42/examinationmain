@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="login.css">
-   
+    <script src="https://kit.fontawesome.com/9e5ba2e3f5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <link rel="stylesheet" href="css/login.css" type="text/css">
 </head>
 <body>
   <?php
@@ -48,42 +50,78 @@ if($count){
   }
 }
 ?>
-    <div class="container-fluid">
-         <div class="bg-img"></div><!-- for adding background ): -->
-    </div>
-    <div class="container" >
-        <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="login">
-
-            <h1>Login</h1>
-            <form name="login" method="post" action="index.php">
+   
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="login">
+          <div class="wrapper">
+            <div class="form-container sign-in">
+              <form name="login" method="post" action="index.php">
+                <h1>Login</h1>
+                <!-- UserName -->
                 <div class="form-group">
-                  <input type="name" class="form-control" id="u_name" name="u_name"  placeholder="Your Name">
-                  
+                  <input type="name" class="form-control" id="u_name" name="u_name" required>
+                  <i class="fas fa-user"></i>
+                  <label for="">Username</label>
                 </div>
-                <div class="form-group">
-                  <input type="password" class="form-control" id="pass"  name="pass" placeholder="Password">
+                <!-- Password -->
+                <div class="form-group ">
+                  <input type="password" class="password" id="pass" name="pass" required>
+                  <i class="fas fa-lock"></i>
+                  <label for="">Password</label>
+                  <label for="">Password</label>
+                  <i class="fas fa-lock"></i>
+                 
                 </div>
+                <div class="okay col-3 col-sm-5 col-lg-5  "><i class="eyee uil uil-eye-slash"></i></div>
+                
+                <script>
+                  eyee = document.querySelector(".eyee"),
+                  input =document.querySelector(".password"); 
 
-                  <div class="form-check">
 
-                  <input type="checkbox">
+                  eyee.addEventListener("click", function(){
+                    if(input.type==='password'){
+                      input.setAttribute('type','text');
+                      eyee.classList.replace("uil-eye-slash","uil-eye");
+                    }else{
+                      input.setAttribute('type','password');
+                      eyee.classList.replace("uil-eye","uil-eye-slash");
+                    }
+                  })
 
-                </label>
-                  <label class="form-check-label ">Remember me</label>
-                  <label class="forgot-password"><a href="ForgotPassword/verification.php">Forgot Password?<a></label>
-
+                </script>
+    
+          <!-- FORGET PASSWORD -->
+                <div class="forgot-pass">
+                  <a href="ForgotPassword/verification.php">forgot password?</a>
                 </div>
-              
+                <!-- SubmitButton -->
                 <br>
-                 <button type="submit" class="btn btn-lg btn-block btn-success">Sign in</button>
+                <button type="submit" class="btn btn-lg btn-block btn-success">Sign in</button>
               </form>
-
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    </div>
-</div>
+  </div>
 
 </body>
-</html>
+<style>
+  
+.eyee{
+font-size:30px;
+cursor:pointer;
+}
+.okay{
+  cursor:pointer;
+  position:absolute;
+  right:7px;
+  transform:translate(0,-50%);
+  top:65%;
+}
+
+  </style>
+</html>z

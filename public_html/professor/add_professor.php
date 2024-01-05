@@ -10,331 +10,288 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/587a7128aa.js" crossorigin="anonymous"></script>
-  <script src="
-https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
-"></script>
-  <style>
-body {
-    background: #eee;
-    min-height: 100vh;
-}
-.wrapper {
-    max-width: 800px;
-    margin: 10px auto;
-    padding: 30px 45px;
-    box-shadow: 5px 25px 35px #3535356b;
-    background-color: white;
-    border-radius: 10px;
-}
-.wrapper label {
-    display: block;
-    padding-bottom: 0.2rem;
-}
-.wrapper .form .row {
-    padding: 0.6rem 0;
-}
-.wrapper .form .option {
-    position: relative;
-    padding-left: 20px;
-    cursor: pointer;
-}
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
 
-
-.wrapper .form .option input {
-    opacity: 0;
-}
-
-.wrapper .form .checkmark {
-    position: absolute;
-    top: 1px;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    border: 1px solid #bbb;
-    border-radius: 50%;
-}
-
-
-
-.wrapper .form .option .checkmark:after {
-    content: "";
-    width: 10px;
-    height: 10px;
-    display: block;
-    background: linear-gradient(45deg, #ce1e53, #8f00c7);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: 300ms ease-in-out 0s;
-}
-
-.wrapper .form .option input[type="radio"]:checked~.checkmark {
-    background: #fff;
-    transition: 300ms ease-in-out 0s;
-}
-
-.wrapper .form .option input[type="radio"]:checked~.checkmark:after {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
+  <link rel="stylesheet" href="../css/addprof.css">
 </head>
 
 <body>
 
-  <form   method="post" action="add_professor.php">
-  <div style="max-width: 818px; "class="container">
-  <div style=" margin-top: 70px; padding-top: 30px;
-padding-bottom: 30px;
-background-color:white; border-radius:10px;" class="containermaintext container">
-                <h3 style="font-size:30px" class="text-center">Add New Professor</h3>
-            </div><hr class="mx-n3">  
-    </div>
-<div  class="wrapper">
+<div style="max-width:800px;border-radius:10px;background-color:white; margin-top: 10px; padding-top: 10px;padding-bottom: px;" class="container">
 
-              <!-- ACADEMIC YEAR BLOCK -->
-              <div style="padding: 20px; " class=" container"><h3>
-                  <label class="d-flex  justify-content-center"  for="drop1">Academic Year:-
-                    <?php
-                    if (date("m") > 5) {
-                    ?>
-                      <?php echo date("Y") . '-' . (date("y") + 1);  ?>
-                    <?php } else { ?>
-                      <?php echo (date("Y") - 1) . '-' . date("y");     ?>
-                    <?php } ?></label></h3>
-                </div>
-<div class="form">
-    <div class="row">
-        <div class="col-md-6 mt-md-0 mt-3">
-            <label>Full Name</label>
+                <h3 style="font-size:30px;color:gray;font-weight:550;" class="text-center">Add New Professor</h3>
+
+                <!-- ACADEMIC YEAR BLOCK -->
+     
+        <h3 style="display:flex;justify-content:center;font-weight:300;">
+          <label class="" for="drop1">Academic Year:-
+            <?php
+            if (date("m") > 5) {
+            ?>
+              <?php echo date("Y") . '-' . (date("y") + 1);  ?>
+            <?php } else { ?>
+              <?php echo (date("Y") - 1) . '-' . date("y");     ?>
+            <?php } ?></label>
+        </h3>
+
+</div>         
+
+
+<div class="frmm ">
+
+  <form method="post" action="add_professor.php">
+    
+      
+    
+    
+<div style="padding:10px;" class="row">
+      <div class="col">
+            <label style="color:grey;">Full Name:-</label>
             <input type="name" placeholder="Enter Full Name" name="pname" id="profname" class="form-control " />
-        </div>
+      </div>
 
-        <!-- DATE OF JOINING -->
-        <div class="col-md-6 mt-md-0 mt-3">
-            <label>Date Of Joining</label>
-            <input type="date"  name="doj" id="doj" class="form-control " />
-        </div>
-    </div>
-    <!-- Department -->
-    <div class="row">
-    <div class="col-md-6 mt-md-0 mt-3">
-            <label>Department</lable>
-            <div style="padding:10px; font-size:20px" class="dropdown row">
-              <select name="department" id="department">
-                <option disabled selected>Select Department</option>
+          <!-- DATE OF JOINING -->
+      <div class="col">
+            <label style="color:grey;">Date Of Joining:-</label>
+            <input type="date" name="doj" id="doj" class="form-control " />
+      </div>
+</div>
+        <?php
+
+        //index.php
+
+        include('../connect.php');
+
+        $query = "
+          SELECT * FROM department 
+ORDER BY name ASC
+";
+        $statement = $conn->prepare($query);
+        $statement->execute();
+        $resultSet = $statement->get_result();
+        $result = $resultSet->fetch_all(MYSQLI_ASSOC);
+        ?>
+        <!-- DEPARTMENT BLOCK -->
+       
+          
+<div style="padding:10px;" class="row">
+  <div class="col">
+              <label style="color:grey;">Select Departments:-</Select></label><br />
+              <select id="first_level" name="first_level[]" multiple class="form-control">
                 <?php
-                require "../connect.php";
-                $sql = "SELECT * FROM department;";
-                $result = mysqli_query($conn, $sql);
-                while ($department = mysqli_fetch_assoc($result)) {
-                  echo "<option id='d_id' value='" . $department['d_id'] . "'>" . $department['name'] . "</option>";
+                foreach ($result as $row) {
+                  echo '<option value="' . $row["d_id"] . '">' . $row["name"] . '</option>';
                 }
                 ?>
               </select>
-            </div>
-         
-    </div>
-<!-- Programmm -->
-        <div class="col-md-6 mt-md-0 mt-3">
-            <label>Programme</lable>
-         
-            <div style="padding:10px; font-size:20px" class="dropdown row">
-              <div class="col-12 text-center"></div>
-              <select name="programme" id="programme" onchange="getprogramme(this.value);">
-
-                <option disabled selected>Select programme</option>
-              </select>
-              <br>
-            </div>
-         
-    </div>
-
-              </div>
-<!-- Course -->
-<div class="row">
-    <div  class="col-md-6 mt-md-0 mt-3">
-            <label>Course</lable>
-            <div  style="padding:10px; font-size:20px"  class="dropdown row">
-              <div class=" text-center"></div>
-              <select name="course" id="course">
-                <option disabled selected>Select course</option>
-              </select>
-              <br>
-            </div>
-         
-    </div>
-<!-- Designation -->
-
-  <!-- DESIGNATION BLOCK -->
-
-
-
-                
-        <div class="col-md-6 mt-md-0 mt-3">
-            <label>Designation</lable>
-         
-            <div style="padding:10px; font-size:20px" class="dropdown row">
-              <div class="col-12 text-center"></div>
-              <select name="designation" id="dsgn">
-              <option selected disabled>Select Designation</option>
-                <option>Dean</option>
-                <option>HOD</option>
-                <option>Professor</option>
-                <option>Associate Professor</option>
-                <option>Assitant Professor</option>
-              </select>
-              <br>
-            </div>
-         
-    </div>
-              </div>
-
-<!-- type -->
-    <div class="row">
-    <div class="col-md-6 mt-md-0 mt-3">
-            <label>Type</label>
-            <div class="d-flex align-items-center mt-2">
-                <label class="option">
-                    <input type="radio" name="type" id="regular" value="R">Regular
-                    <span class="checkmark"></span>
-                </label>
-                <label class="option ms-4">
-                <input type="radio" name="type" id="visiting" value="V">Visiting
-                    <span class="checkmark"></span>
-                </label>
-            </div>
-        </div>
-<!-- Examcommiteemember -->
-        <div class="col-md-6 mt-md-0 mt-3">
-            <label>Exam Commitee Member</label>
-            <div class="d-flex align-items-center mt-2">
-                <label class="option">
-    
-                  <input type="radio" name="ecm" id="" value="yes">Yes
-                    <span class="checkmark"></span>
-                </label>
-                <label class="option ms-4">
-                <input type="radio" name="ecm" id="" value="no">No
-                    <span class="checkmark"></span>
-                </label>
-            </div>
-        </div>
-
-
-    </div>
-    <hr>
-    <div class="row">
-    <div  class="col-md-12  ">
-    <div  class="d-flex justify-content-center mt-2">
-                <label  class="option">
-    
-                  <input type="radio" name="staff" value="reg">Regular
-                    <span class="checkmark"></span>
-                </label>
-                <label class="option ms-4">
-                <input type="radio" name="staff" value="sfc">SFC
-                    <span class="checkmark"></span>
-                </label>
-                <label class="option ms-4">
-                <input type="radio" name="staff" value="both">Both
-                    <span class="checkmark"></span>
-                </label>
-            </div>
-              </div>
-
-    <button type="submit" class="btn btn-outline-primary  mt-3">Submit</button>
-
   </div>
-</div>
-</div>
+            <!-- PROGRAMME BLOCK -->
+
+  <div class="col">
+              <label style="color:grey;">Select Programs:-</label><br />
+              <select id="second_level" name="second_level[]" multiple class="form-control">
+              </select>
+  </div>
 
 </div>
-     </form>
-  <script type="text/javascript">
+            <!-- COURSE BLOCK -->
+<div style="padding:10px;" class="row">
+        <div class="col">
+              <label style="color:grey;">Select Courses:-</label><br />
+              <select id="third_level" name="third_level[]" multiple class="form-control">
+              </select>
+        </div>
+        <!-- DESIGNATION BLOCK -->
+
+        <div class="col">
+          <div style="padding-left:15px;padding-top:5px;">
+          
+          <label style="color:grey;">Designation:-</lable>
+            <div style="width:300px;" class="dropdown row">
+            <select class="form-control" id="dsgn">
+                  <option selected disabled>Select Designation</option>
+                  <option>Dean</option>
+                  <option>HOD</option>
+                  <option>Professor</option>
+                  <option>Associate Professor</option>
+                  <option>Assitant Professor</option>
+                  </select>
+              <br>
+              
+            </div>
+          
+          </div>   
+        </div>
+</div>
+
+      <!-- type -->
+<div style="padding:px;" class="row">
+    <div class="col">
+          <label style="color:grey;">Type:-</label>
+        <div class="d-flex align-items-center mt-2">
+            <label class="option">
+              <input type="radio" name="type" id="regular" value="R">Regular
+              <span class="checkmark" for="regular"></span>
+            </label>
+            <label class="option ms-4">
+              <input type="radio" name="type" id="visiting" value="V">Visiting
+              <span class="checkmark" for="visiting"></span>
+            </label>
+        </div>
+    </div>
+        <!-- Examcommiteemember -->
+    <div class="col">
+          <label style="color:grey;">Exam Commitee Member:-</label>
+        <div class="d-flex align-items-center mt-2">
+            <label class="option">
+              <input type="radio" name="ecm" id="yes" value="yes">Yes
+              <span class="checkmark" for="yes"></span>
+            </label>
+            <label class="option ms-4">
+              <input type="radio" name="ecm" id="no" value="no">No
+              <span class="checkmark" for="no"></span>
+            </label>
+        </div>
+    </div>
+</div>
+      <hr>
+      
+        <div class="radio3">
+          <div class="d-flex justify-content-center mt-2">
+            <label class="option">
+
+              <input type="radio" name="staff" value="reg">Regular
+              <span class="checkmark"></span>
+            </label>
+            <label class="option ms-4">
+              <input type="radio" name="staff" value="sfc">SFC
+              <span class="checkmark"></span>
+            </label>
+            <label class="option ms-4">
+              <input type="radio" name="staff" value="both">Both
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+                <!-- Submit Button -->
+                <div style="" class="d-grid gap-2 submit">
+          
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+          
+              </div>
+
+  
+ 
+  </form>
+  </div>
+  <script>
     $(document).ready(function() {
-      $('#department').change(function() {
-        var d_id = $(this).val();
-        // alert (d_id);
 
-        $.ajax({
-
-          type: 'POST',
-          cache: false,
-          url: 'fetch.php',
-          data: {
-            id: d_id
-          },
-          success: function(data) {
-            $('#programme').html(data);
+      $('#first_level').multiselect({
+        nonSelectedText: 'Select Deparment(s)',
+        buttonWidth: 'auto',
+        onChange: function(option, checked) {
+          $('#second_level').html('');
+          $('#second_level').multiselect('rebuild');
+          $('#third_level').html('');
+          $('#third_level').multiselect('rebuild');
+          var selected = this.$select.val();
+          
+          if (selected.length > 0) {
+            $.ajax({
+              url: "fetch_second_level_category.php",
+              method: "POST",
+              data: {
+                selected: selected
+              },
+              success: function(data) {
+                $('#second_level').html(data);
+                $('#second_level').multiselect('rebuild');
+              }
+            })
           }
-        });
+        }
       });
-    });
 
-    $(document).ready(function() {
-      $('#programme').change(function() {
-        var pr_id = $(this).val();
-
-
-        $.ajax({
-
-          type: 'POST',
-          cache: false,
-          url: 'fetchcourse.php',
-          data: {
-            id: pr_id
-          },
-          success: function(data) {
-            $('#course').html(data);
+      $('#second_level').multiselect({
+        nonSelectedText: 'Select Program(s)',
+        buttonWidth: 'auto',
+        onChange: function(option, checked) {
+          $('#third_level').html('');
+          $('#third_level').multiselect('rebuild');
+          var selected = this.$select.val();
+          if (selected.length > 0) {
+            $.ajax({
+              url: "fetch_third_level_category.php",
+              method: "POST",
+              data: {
+                selected: selected
+              },
+              success: function(data) {
+                $('#third_level').html(data);
+                $('#third_level').multiselect('rebuild');
+              }
+            });
           }
-        });
+        }
       });
+
+      $('#third_level').multiselect({
+        nonSelectedText: 'Select Course(s)',
+        buttonWidth: 'auto'
+      });
+
     });
   </script>
+
   <?php
-  require ("../connect.php");
-  if(isset($_POST['pname'])){
-    $name=$_POST["pname"];
-    $doj= $_POST['doj'];
-    $dept=$_POST['programme'];
-    $prog=$_POST['department'];
-    $course=$_POST['course'];
-    $type=$_POST['type'];
-    $ecm=$_POST['ecm'];
-    $designation=$_POST['ecm'];
-    $staff=$_POST['staff'];
-    
-    $sq="INSERT INTO `professor`( `name`,`d_id`,`doj`,`reg_sfc`,`type`,`ecm`,`designation`)
-    VALUES ('$name','$dept','$doj','$staff','$type','$ecm','$designation')";
-  
-    
-    if($conn->query($sq)){
-       echo '<div class="alert alert-success alert-dismissible fade show" role="alert" style=" width:100%; position: fixed; top: 0; left: 0; ">
+  require("../connect.php");
+  if (isset($_POST['pname'])) {
+    $name = $_POST["pname"];
+    $doj = $_POST['doj'];
+    $department = $_POST['first_level'];
+   // $prog = $_POST['department'];
+    $course = $_POST['third_level'];
+    $type = $_POST['type'];
+    $ecm = $_POST['ecm'];
+    $designation = $_POST['designation'];
+    $staff = $_POST['staff'];
+
+    $sq = "INSERT INTO `professor`( `name`,`doj`,`reg_sfc`,`type`,`ecm`,`designation`)
+    VALUES ('$name','$doj','$staff','$type','$ecm','$designation')";
+    $res=$conn->query($sq);
+    $sq2="Select p_id from professor where name='$name' and doj='$doj' and reg_sfc='$staff' and type='$type' and ecm= '$ecm' and designation='$designation'";
+    $res2=$conn->query($sq2);
+    $row = $res2->fetch_assoc();
+    $id=$row['p_id'];
+    foreach($department as $d){
+    $sq3="INSERT INTO p_department VALUES ($id,$d);";
+    $res3=$conn->query($sq3);
+    }
+    foreach($course as $c){
+      $sq4="INSERT INTO p_course VALUES ($id,$c);";
+    $res4=$conn->query($sq4);
+    }
+    if ($res4) {
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert" style=" width:100%; position: fixed; top: 0; left: 0; ">
        <strong>Sucess!</strong> Data saved sucessfully.
        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
      </div>';
-    } 
-    else{
+    } else {
       echo '<div class="alert alert-danger alert-dismissible fade show" role="alert" style=" width:100%; position: fixed; top: 0; left: 0; ">
        <strong>Error!</strong> something went wrong.
        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
      </div>';
     }
-
   }
   ?>
 
-  
+
 </body>
 
 </html>
-
-
-
-
-
-
-
