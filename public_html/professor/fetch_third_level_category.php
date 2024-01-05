@@ -21,8 +21,4 @@ if(isset($_POST["selected"]))
  }
  echo $output;
 }
-
-
-
-
 ?>

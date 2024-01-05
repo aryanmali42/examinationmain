@@ -198,7 +198,7 @@ ttime.disabled=!checkbox.checked;
 		<div style="display:flex;justify-content:center;">
 
 				<div style="" class="d-grid gap-2 submit">
-				<input type="submit" value="Submit" name="Submit" id="Submit" class="btn btn-primary" style="display:none;">
+				<input type="submit" value="Submit" name="Submit" id="Submit" class="" style="display:none;">
 
     </div></div>	
 				</div></div>

@@ -34,8 +34,8 @@ body {
     margin: 30px auto;
   }
   .login .btn {
-    background: linear-gradient(to right, #aeaeae, #aaaaaa);
-  color: #ffffff;
+    background: linear-gradient(to right, #cfcece, grey);
+    color: #ffffff;
   border-radius: .3rem;
   cursor: pointer;
     box-shadow: 0 .2rem 1rem rgba(0, 0, 0, 0.4);

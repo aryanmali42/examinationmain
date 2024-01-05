@@ -43,6 +43,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	<title>UAvailability Of Profesor</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="update_prof.css">
 </head>
 
 <script type="text/javascript">
@@ -94,9 +95,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 </script>
 
 <body>
-	<div class="container">
-		<h3>UnAvailability Of Professor</h3>
+<div style="margin-top:40px;background-color:white;border-radius:10px;padding:5px;max-width:800px;"class="container">
+		<h3 style="font-size:30px;font-weight:bold;color:gray;text-align:center;">UAvailability Of Profesor</h3>
     <br />
+</div>
+
+<div class="formm">
+	<div class="sizeform">
 		<form action="index4.php" method="post">
 			<div class="col-auto">
 
@@ -142,5 +147,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			</div>
 		</form>
 	</div>
+</div>
+	
 </body>
 </html>
